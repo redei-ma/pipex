@@ -1,0 +1,33 @@
+#include "libft.h"
+
+static void	*ft_rev(void *dest, const void *src, size_t n)
+{
+	unsigned char		*tempd;
+	unsigned const char	*temps;
+
+	tempd = (unsigned char *)dest + (n - 1);
+	temps = (unsigned const char *)src + (n - 1);
+	while (n--)
+		*tempd-- = *temps--;
+	return (dest);
+}
+
+void	*ft_memmove(void *dest, const void *src, size_t n)
+{
+	if (dest == src || n == 0)
+		return (dest);
+	else if (src > dest)
+		return (ft_memcpy(dest, src, n));
+	return (ft_rev(dest, src, n));
+}
+
+/* int main()
+{
+	int n = 50;
+	char d1[400] = "01234567890123456789";
+	char d2[400] = "01234567890123456789";
+
+	printf("Original function: %s\n", (char *)memmove(d1 -2, d1, n));
+	printf("Reimplemented function: %s\n", (char *)ft_memmove(d2 -2, d2, n));
+	return 0;
+} */
