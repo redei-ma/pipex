@@ -55,7 +55,5 @@ paths: no leaks, no invalid reads.
 │   ├── forking_bonus.c # the middle children of the pipeline
 │   ├── here_doc.c      # reads stdin up to the delimiter
 │   └── utils_bonus.c   # closes the pipes a given child does not use
-├── libft/              # the library, as published in redei-ma/libft
-├── LICENSE
-└── README.md
+└── libft/              # the library, as published in redei-ma/libft
 ```
