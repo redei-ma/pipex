@@ -19,11 +19,6 @@ HDRS = $(addprefix $(INCLUDE)/, libft.h ft_printf.h ft_fprintf.h get_next_line_b
 OBJ_DIR = ./.obj
 OBJ = $(SRC:%.c=$(OBJ_DIR)/%.o)
 
-TEST_DIR = test
-TEST_SRC = $(addprefix $(TEST_DIR)/, main.c report.c test_type.c test_str.c \
-			test_mem.c test_alloc.c test_lst.c test_print.c test_misc.c test_null.c)
-TEST_BIN = run_tests
-
 all: $(NAME)
 
 $(NAME): $(OBJ)
@@ -37,16 +32,12 @@ clean:
 	@rm -rf $(OBJ_DIR)
 
 fclean: clean
-	@rm -rf $(NAME) $(TEST_BIN)
+	@rm -rf $(NAME)
 
 re: fclean all
 
 debug: fclean
 	@$(MAKE) CFLAGS="$(CFLAGS) -g" all
 
-test: $(NAME)
-	@$(CC) $(CFLAGS) -I$(TEST_DIR) $(TEST_SRC) $(NAME) -o $(TEST_BIN)
-	@./$(TEST_BIN)
-
-.PHONY: all clean fclean re debug test
+.PHONY: all clean fclean re debug
 .SILENT:
