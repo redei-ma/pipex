@@ -1,7 +1,7 @@
 #include "pipex_bonus.h"
 #include <sys/wait.h>
 
-void	here_process(t_pipex **piper, int *fd)
+static void	here_process(t_pipex **piper, int *fd)
 {
 	char	*line;
 	char	*limiter;

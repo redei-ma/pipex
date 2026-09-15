@@ -1,6 +1,6 @@
 #include "pipex.h"
 
-char	*already_path(char *cmd)
+static char	*already_path(char *cmd)
 {
 	char	*path;
 

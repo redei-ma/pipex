@@ -1,6 +1,6 @@
 #include "pipex.h"
 
-char	*test_path(char **cmd_path, char *cmd, int j)
+static char	*test_path(char **cmd_path, char *cmd, int j)
 {
 	int		i;
 	char	*full_path;
@@ -24,7 +24,7 @@ char	*test_path(char **cmd_path, char *cmd, int j)
 	return (NULL);
 }
 
-char	*find_command_path(char *path, char *cmd)
+static char	*find_command_path(char *path, char *cmd)
 {
 	char	**cmd_path;
 	char	*full_path;
@@ -63,7 +63,7 @@ char	*get_path(char *cmd, char **envp)
 	return (NULL);
 }
 
-void	set_pipe(t_pipex **piper)
+static void	set_pipe(t_pipex **piper)
 {
 	(*piper)->i = 0;
 	(*piper)->fds = ft_calloc((*piper)->n_pipes, sizeof(int *));

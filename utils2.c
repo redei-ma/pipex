@@ -1,6 +1,6 @@
 #include "pipex.h"
 
-void	free_all(char **mat, char *str)
+static void	free_all(char **mat, char *str)
 {
 	if (mat)
 		ft_free_mat((void **)mat, 2);
